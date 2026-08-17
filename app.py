@@ -477,7 +477,32 @@ if country_col:
     country_values.index.name = "Indicator"
     st.dataframe(country_values, use_container_width=True)
 
+# -----------------------------
+# Download clustering results
+# -----------------------------
 st.divider()
+
+st.markdown(
+    '<div class="section-title">Download Results</div>',
+    unsafe_allow_html=True,
+)
+
+# Keep every original column and append the cluster assigned by the
+# currently selected algorithm/settings.
+download_df = data.copy()
+download_df["Cluster"] = labels
+
+download_csv = download_df.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="📥 Download Results CSV",
+    data=download_csv,
+    file_name="clustering_results.csv",
+    mime="text/csv",
+    use_container_width=False,
+    help="Download the uploaded dataset with the cluster assigned to each row.",
+)
+
 st.caption(
     f"Uploaded dataset • {len(data):,} rows × {len(numeric_cols)} numeric "
     f"features • {coverage:.2f}% assigned"
