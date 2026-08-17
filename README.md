@@ -1,4 +1,7 @@
 # Global Development Cluster Analysis — Streamlit
+## 🚀 Live Demo
+
+[🌍 Open the Streamlit App](https://global-development-clustering-bteppwnxatgj5dqtjdicas.streamlit.app)
 
 This package deploys the final K-Means model from the P693 Cluster Analysis project.
 
