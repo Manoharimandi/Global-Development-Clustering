@@ -122,7 +122,7 @@ st.sidebar.caption("200MB per file • CSV")
 if uploaded_file is None:
     st.divider()
 
-    st.info("👉 Upload a CSV file from the sidebar to get started.")
+    st.info("👈 Upload a CSV file from the sidebar to get started.")
 
     st.markdown(
         "**Expected format:** World Development Measurements CSV with columns "
